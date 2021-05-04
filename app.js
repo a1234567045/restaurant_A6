@@ -29,9 +29,9 @@ app.get('/restaurants/:restaurant_id', (req, res) => {
 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  // const restaurants = restaurantList.results.filter(restaurant => {
-  //   return restaurant.title.includes(keyword)
-  // })
+  const restaurants = restaurantList.results.filter(restaurant => {
+    return restaurant.title.includes(keyword)
+  })
   console.log('req.query', req.query)
   res.render('index', { restaurants: restaurantList.results });
 })
