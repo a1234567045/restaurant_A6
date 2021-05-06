@@ -30,10 +30,11 @@ app.get('/restaurants/:restaurant_id', (req, res) => {
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
   const restaurants = restaurantList.results.filter(restaurant => {
-    return restaurant.title.includes(keyword)
+    // return restaurant.title?.includes(keyword)
+    return restaurant.name && restaurant.name.toLowerCase().includes(keyword.toLowerCase())
   })
-  console.log('req.query', req.query)
-  res.render('index', { restaurants: restaurantList.results });
+
+  res.render('index', { restaurants: restaurants });
 })
 
 app.listen(port, () => {

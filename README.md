@@ -25,4 +25,4 @@ nodemon app.js
 # 開發環境
 Node.js: v10.15.0
 Express: v4.17.1
-Express-Handlebars: v4.0.4
+Express-Handlebars: v5.3.0
