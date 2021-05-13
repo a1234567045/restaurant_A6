@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-
+const Restaurant = require('./models/restaurant')
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/restaurant_list', { useNewUrlParser: true, useUnifiedTopology: true })// 設定連線到 mongoDB
 const db = mongoose.connection
@@ -27,8 +27,11 @@ app.use(express.static('public'))
 
 // routes setting
 app.get('/', (req, res) => {
-
-  res.render('index', { restaurants: restaurantList.results });
+  Restaurant.find()
+    .lean()
+    .then(restaurants => res.render('index', { restaurants }))
+    .catch(error => console.error(error))
+  // res.render('index', { restaurants: restaurantList.results });
 })
 
 app.get('/restaurants/:restaurant_id', (req, res) => {
