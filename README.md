@@ -23,6 +23,6 @@ nodemon app.js
 * 在terminal可以看到 Express is listening on localhost : 3000，開啟瀏覽器在網址列輸入localhost:3000
 
 # 開發環境
-Node.js: v10.15.0
-Express: v4.17.1
-Express-Handlebars: v5.3.0
+* Node.js: v10.15.0
+* Express: v4.17.1
+* Express-Handlebars: v5.3.0
