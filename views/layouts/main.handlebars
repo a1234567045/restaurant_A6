@@ -28,12 +28,19 @@
         我的餐廳清單
       </a>
     </div>
+    <div>
+      <form action="/restaurants/new" method="GET">
+        <button class="edit-btn" type="submit"><i class="mr-1 fas fa-plus"></i>新增餐廳
+        </button>
+      </form>
+    </div>
   </nav>
 
   <div class="banner"></div>
   </nav>
   <!-- partial templates will replace the part of "body" here -->
   {{{ body }}}
+
   <script src="/javascripts/jquery-3.3.1.js"></script>
   <script src="/javascripts/popper.js"></script>
   <script src="/javascripts/bootstrap.js"></script>
