@@ -33,15 +33,10 @@ app.get('/', (req, res) => {
     .catch(error => console.error(error))
 })
 
-app.get('/restaurants/:restaurant_id', (req, res) => {
-  const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
-
-  res.render('show', { restaurant: restaurant })
-})
-
 app.get('/restaurants/new', (req, res) => {
   return res.render('new')
 })
+
 
 app.post('/restaurants', (req, res) => {
   if (req.body.image.length === 0) { req.body.image = 'https://www.teknozeka.com/wp-content/uploads/2020/03/wp-header-logo-33.png' }
@@ -50,6 +45,15 @@ app.post('/restaurants', (req, res) => {
     .then(() => res.redirect('/')) // 新增完成後導回首頁
     .catch(error => console.log(error))
 })
+
+
+app.get('/restaurants/:restaurant_id', (req, res) => {
+  const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
+
+  res.render('show', { restaurant: restaurant })
+})
+
+
 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword

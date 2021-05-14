@@ -1,4 +1,61 @@
-<form action="/restaurants" method="POST">
-  <input type="text" placeholder="name" name="name">
-  <button type="submit">Create</button>
-</form>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="create-form">
+      <form action="/restaurants" method="POST">
+        <div class="form-row justify-content-center">
+          <div class="form-group col-md-6">
+            <label for="name">Restaurant Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="餐廳名稱">
+          </div>
+          <div class="form-group col-md-4 ml-2">
+            <label for="category">Category</label>
+            <select id="category" class="form-control" name="category">
+              <option>選擇餐廳類型</option>
+              <option>美式餐廳</option>
+              <option>日本料理</option>
+              <option>義式餐廳</option>
+              <option>中式餐廳</option>
+              <option>泰式料理</option>
+              <option>中東料理</option>
+              <option>異國風味</option>
+              <option>吃到飽</option>
+              <option>早午餐</option>
+              <option>咖啡</option>
+              <option>酒吧</option>
+            </select>
+          </div>
+          <div class="form-group col-10">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="location" placeholder="餐廳地址">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="rating">Rating</label>
+            <input type="text" class="form-control" id="rating" name="rating" placeholder="4.0">
+          </div>
+          <div class="form-group col-10">
+            <label for="image">Image</label>
+            <input type="text" class="form-control" id="image" name="image" placeholder="http://">
+          </div>
+          <div class="form-group col-10">
+            <label for="google_map">Google Map</label>
+            <input type="text" class="form-control" id="google_map" name="google_map" placeholder="Google map URL">
+          </div>
+          <div class="form-group col-md-10">
+            <label for="description">Description</label>
+            <textarea type="text" class="form-control form-description" id="description" name="description"></textarea>
+          </div>
+          <div class="form-group col-md-10 justify-content-start" style="margin-top: 10px;">
+            <button type="submit" class="btn btn-info">Submit</button>
+            <a href="/">
+              <button type="button" class="btn btn-warning ml-3">Back</button>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
