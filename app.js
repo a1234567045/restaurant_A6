@@ -10,8 +10,8 @@ const restaurantList = require('./restaurant.json')
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
-app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.listen(port, () => {
   console.log(`Express is listening on localhost:${port}`)
 })
@@ -39,7 +39,6 @@ app.get('/restaurants/new', (req, res) => {
 
 
 app.post('/restaurants', (req, res) => {
-  if (req.body.image.length === 0) { req.body.image = 'https://www.teknozeka.com/wp-content/uploads/2020/03/wp-header-logo-33.png' }
   const restaurant = req.body
   return Restaurant.create({ restaurant }) // 存入資料庫
     .then(() => res.redirect('/')) // 新增完成後導回首頁
